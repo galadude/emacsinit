@@ -1,10 +1,6 @@
 ;; Michael Galanakis
 ;; 2016-03-30
 
-;; windows stuff ----
-(setq shell-file-name "C:/cygwin/bin/bash.exe") 
-(setq exec-path (cons "C:/cygwin/bin" exec-path))
-
 ;; repositories ----
 
 (require 'package)
@@ -13,6 +9,11 @@
    '("melpa" . "http://melpa.org/packages/")
    t)
 (package-initialize)
+
+;; windows stuff ----
+
+(setq shell-file-name "C:/cygwin/bin/bash.exe") 
+(setq exec-path (cons "C:/cygwin/bin" exec-path))
 
 ;; general settings ----
 
@@ -27,6 +28,7 @@
 
 
 ;; packages ----
+(require 'evil-magit)
 
 (require 'helm)
 (global-set-key (kbd "M-x") 'helm-M-x)
