@@ -9,6 +9,7 @@
    '("melpa" . "http://melpa.org/packages/")
    t)
 (package-initialize)
+(load "~/emacs-package.el")
 
 ;; windows stuff ----
 
