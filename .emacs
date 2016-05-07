@@ -18,16 +18,19 @@
     (setq exec-path (cons "C:/cygwin/bin" exec-path)))
 
 (when (string-equal system-type "darwin")
-    (setq mac-option-modifier mac
-	nil-command-modifier 'meta
-	x-select-enable-clipboard t)
-    (tool-bar-mode 0)
     (setq default-input-method "MacOSX"))
 
+
+;; settings ----
+
+(set-face-attribute 'default nil :height 180)
+(tool-bar-mode 0)
 
 ;; packages ----
 
 (require 'evil-magit)
+(require 'git-gutter)
+(global-git-gutter-mode +1)
 
 (require 'helm)
 (global-set-key (kbd "M-x") 'helm-M-x)
