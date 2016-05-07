@@ -11,24 +11,22 @@
 (package-initialize)
 (load "~/emacs-package.el")
 
-;; windows stuff ----
+;; os crap ----
 
-(setq shell-file-name "C:/cygwin/bin/bash.exe") 
-(setq exec-path (cons "C:/cygwin/bin" exec-path))
+(when (string-equal system-type "windows-nt")
+    (setq shell-file-name "C:/cygwin/bin/bash.exe") 
+    (setq exec-path (cons "C:/cygwin/bin" exec-path)))
 
-;; general settings ----
-
-;; (setq mac-option-modifier mac
-;;       nil-command-modifier 'meta
-;;       x-select-enable-clipboard t)
-
-(tool-bar-mode 0)
-;(setq default-input-method "MacOSX")
-
-;; general key bindings ----
+(when (string-equal system-type "darwin")
+    (setq mac-option-modifier mac
+	nil-command-modifier 'meta
+	x-select-enable-clipboard t)
+    (tool-bar-mode 0)
+    (setq default-input-method "MacOSX"))
 
 
 ;; packages ----
+
 (require 'evil-magit)
 
 (require 'helm)
