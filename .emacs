@@ -27,6 +27,12 @@
 (tool-bar-mode 0)
 
 ;; packages ----
+(require 'paredit)
+
+(require 'rainbow-delimiters)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
+(require 'multiple-cursors)
 
 (require 'evil-magit)
 (require 'git-gutter)
