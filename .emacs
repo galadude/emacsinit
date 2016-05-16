@@ -33,8 +33,6 @@
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 
-(require 'multiple-cursors)
-
 (require 'evil-magit)
 (require 'git-gutter)
 (global-git-gutter-mode +1)
@@ -53,11 +51,14 @@
 (require 'evil-leader)
 (global-evil-leader-mode)
 
+(require 'evil-mc)
+(global-evil-mc-mode 1)
+
 (evil-leader/set-leader "SPC")
 (evil-leader/set-key
- "o" 'other-window
- "b" 'switch-to-buffer
- "w" 'save-buffer)
+   "o" 'other-window
+   "b" 'switch-to-buffer
+   "w" 'save-buffer)
 
 (require 'evil)
 (evil-mode 1)

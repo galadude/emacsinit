@@ -4,8 +4,8 @@
       '(
 	paredit
 	rainbow-delimiters
-	multiple-cursors
 	evil
+	evil-mc
 	evil-magit
 	ess
 	auctex
