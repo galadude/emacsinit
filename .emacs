@@ -1,5 +1,5 @@
-;; Michael Galanakis
-;; 2016-03-30
+;; MICHAEL Galanakis
+;; UPDATED: 2016-05-16
 
 ;; repositories ----
 
@@ -13,27 +13,14 @@
 
 ;; os crap ----
 
-<<<<<<< Updated upstream
-(when (string-equal system-type "windows-nt")
-    (setq shell-file-name "C:/cygwin/bin/bash.exe") 
-    (setq exec-path (cons "C:/cygwin/bin" exec-path)))
-=======
-;(setq shell-file-name "C:/cygwin/bin/bash.exe") 
-;(setq exec-path (cons "C:/cygwin/bin" exec-path))
-
-;; fixing bug with magit pull
-(require 'server)
 (when (and (>= emacs-major-version 23)
            (equal window-system 'w32))
-  (defun server-ensure-safe-dir (dir) "Noop" t)) ; Suppress error "directory
-                                                 ; ~/.emacs.d/server is unsafe"
-                                                 ; on windows.
-(server-start)
->>>>>>> Stashed changes
+  (require 'server)
+  (defun server-ensure-safe-dir (dir) "Noop" t)
+  (server-start))
 
 (when (string-equal system-type "darwin")
     (setq default-input-method "MacOSX"))
-
 
 ;; settings ----
 
@@ -41,8 +28,8 @@
 (tool-bar-mode 0)
 
 ;; packages ----
-(require 'paredit)
 
+(require 'paredit)
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 
