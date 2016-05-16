@@ -13,9 +13,23 @@
 
 ;; os crap ----
 
+<<<<<<< Updated upstream
 (when (string-equal system-type "windows-nt")
     (setq shell-file-name "C:/cygwin/bin/bash.exe") 
     (setq exec-path (cons "C:/cygwin/bin" exec-path)))
+=======
+;(setq shell-file-name "C:/cygwin/bin/bash.exe") 
+;(setq exec-path (cons "C:/cygwin/bin" exec-path))
+
+;; fixing bug with magit pull
+(require 'server)
+(when (and (>= emacs-major-version 23)
+           (equal window-system 'w32))
+  (defun server-ensure-safe-dir (dir) "Noop" t)) ; Suppress error "directory
+                                                 ; ~/.emacs.d/server is unsafe"
+                                                 ; on windows.
+(server-start)
+>>>>>>> Stashed changes
 
 (when (string-equal system-type "darwin")
     (setq default-input-method "MacOSX"))
