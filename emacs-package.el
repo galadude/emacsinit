@@ -16,7 +16,8 @@
 	evil-surround
 	key-chord
 	git-gutter
-	
+	ocp-indent
+	merlin
 ))
 
 ;; refresh package list if it is not already available
