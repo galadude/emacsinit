@@ -1,5 +1,5 @@
 # {{{ alias
-
+alias ed='ed -p:'
 # }}}
 # {{{ start tmux 
 if [[ ! $TERM =~ screen ]]; then

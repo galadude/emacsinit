@@ -46,7 +46,7 @@
 (ac-config-default)
 
 (require 'ac-helm)
-(global-set-key (kbd "M-d") 'ac-complete-with-helm)
+(global-set-key (kbd "<backtab>") 'ac-complete-with-helm)
 
 (require 'evil-leader)
 (global-evil-leader-mode)
@@ -65,7 +65,9 @@
 
 ;; OCaml stuff
 
-(setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+(setq opam-share
+      (substring
+       (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
 
 (require 'ocp-indent)
@@ -97,3 +99,11 @@
 ;(setq ess-eval-visibly-p nil)
 (setq ess-ask-for-ess-directory nil)
 (setq ess-fancy-comments nil) ; important!
+
+(defun myess-eval-module()
+    "evals R modules from modules package"
+    (isearch-backward "modules()")
+    (beginning-of-line)
+    (set-mark-command)
+    (search-forward-regexp "^})$")
+    (ess-eval-region))
