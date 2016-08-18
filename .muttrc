@@ -1,0 +1,23 @@
+set imap_user = "vhg505"
+set imap_pass = "jUiztasta+"
+
+set smtp_url = "smtp://vhg505@exchange.ku.dk:465/"
+set smtp_pass = "jUiztasta+"
+
+set from = "mgalanakis@sund.ku.dk" 
+set realname = "Michael C. B. Galanakis"
+
+set folder = "imaps://exchange.ku.dk:993/"
+set spoolfile = "+INBOX"
+set postponed="+[ku]/Drafts"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+set move = no
+set editor = 'vim'
+set timeout = 10
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html

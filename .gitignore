@@ -1,5 +1,9 @@
 *
 !emacs-package.el
 !.emacs
+!.vimrc
+!tmux.config
+!.muttrc
+!.mailcap
 !.gitignore
 
