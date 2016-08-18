@@ -2,7 +2,7 @@ set imap_user = "vhg505"
 set imap_pass = "jUiztasta+"
 
 set smtp_url = "smtp://vhg505@exchange.ku.dk:465/"
-set smtp_pass = "jUiztasta+"
+set smtp_pass = ""
 
 set from = "mgalanakis@sund.ku.dk" 
 set realname = "Michael C. B. Galanakis"
